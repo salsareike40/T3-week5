@@ -94,17 +94,17 @@ class Notepad(QMainWindow):
 
         self.cut_act = QAction("Cut", self)
         self.cut_act.setShortcut(QKeySequence.Cut)
-        self.cut_act.setIcon(self.style().standardIcon(QStyle.SP_TrashIcon))  # ⬅️ TAMBAH INI
+        self.cut_act.setIcon(self.style().standardIcon(QStyle.SP_TrashIcon))  
         self.cut_act.triggered.connect(self.editor.cut)
 
         self.copy_act = QAction("Copy", self)
         self.copy_act.setShortcut(QKeySequence.Copy)
-        self.copy_act.setIcon(self.style().standardIcon(QStyle.SP_FileIcon))  # ⬅️ TAMBAH
+        self.copy_act.setIcon(self.style().standardIcon(QStyle.SP_FileIcon))  
         self.copy_act.triggered.connect(self.editor.copy)
 
         self.paste_act = QAction("Paste", self)
         self.paste_act.setShortcut(QKeySequence.Paste)
-        self.paste_act.setIcon(self.style().standardIcon(QStyle.SP_DialogApplyButton))  # ⬅️ TAMBAH
+        self.paste_act.setIcon(self.style().standardIcon(QStyle.SP_DialogApplyButton))  
         self.paste_act.triggered.connect(self.editor.paste)
 
         self.select_all_act = QAction("Select All", self)
@@ -120,7 +120,7 @@ class Notepad(QMainWindow):
 
         self.find_act = QAction("Find", self)
         self.find_act.setShortcut(QKeySequence.Find)
-        self.find_act.setIcon(self.style().standardIcon(QStyle.SP_FileDialogContentsView))  # ⬅️ TAMBAH
+        self.find_act.setIcon(self.style().standardIcon(QStyle.SP_FileDialogContentsView))  
         self.find_act.triggered.connect(self.open_find_dialog)
 
     def create_menu(self):
@@ -268,17 +268,15 @@ class Notepad(QMainWindow):
         if not text:
             return
 
-        # cari dari awal
         cursor = QTextCursor(self.editor.document())
         cursor = self.editor.document().find(text, cursor)
 
         if not cursor.isNull():
             cursor.insertText(replace)
 
-            # pindahkan cursor ke hasil
+           
             self.editor.setTextCursor(cursor)
 
-            # highlight ulang
             self.find_text()
 
     def replace_all(self):
