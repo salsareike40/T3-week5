@@ -54,6 +54,6 @@
 
 <h3>Gambar 10</h3>
 <p align="center">
-  <img src="aset/image-9.png" width="400"/>
+  <img src="aset/image-10.png" width="400"/>
 </p>
-<p align="center"><em>replcae dan replace all kalimat "data"</em></p>
+<p align="center"><em>replace dan replace all kalimat "data"</em></p>
